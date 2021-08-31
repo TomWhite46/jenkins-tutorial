@@ -1,5 +1,7 @@
 pipeline{
         agent any
+        environment{
+                name="tom"
         stages{
             stage('Make Directory'){
                 steps{
@@ -13,7 +15,7 @@ pipeline{
             }
              stage('Say hello') {
                 steps{
-                    sh "echo 'hello'"
+                        sh "echo ${name}"
                 }
             }
         }
